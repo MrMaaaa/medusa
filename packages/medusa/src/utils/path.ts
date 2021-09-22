@@ -29,7 +29,7 @@ export default class Layer {
 
   constructor(path = '/') {
     if (path.endsWith('/*')) {
-      path = path.replace('/*', '/(.*)');
+      path = path.replace(/\/\*$/, '/(.*)');
     }
     this.regexp = pathToRegexp(path, this.keys);
     this.path = path;
